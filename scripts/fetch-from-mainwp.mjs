@@ -281,9 +281,9 @@ ${mdContent}
 
         await fs.writeFile(path.join(BLOG_OUTPUT, `${slug}.md`), frontmatter, 'utf8');
 
-        redirects.push(`/${slug}  /blog/${slug}  301`);
-        redirects.push(`/${slug}/  /blog/${slug}  301`);
-        redirects.push(`/blog/${slug}/  /blog/${slug}  301`);
+        redirects.push(`/${slug}  /blog/${slug}/  301`);
+        redirects.push(`/${slug}/  /blog/${slug}/  301`);
+
       } catch (err) {
         // En cas d'erreur ponctuelle sur un post
       }
