@@ -12,11 +12,11 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "PBN Starter Template",
-  domain: "example.com",
-  url: "https://example.com",
-  description: "Modèle universel Astro 5 + Keystatic + i18n pour réseau PBN Cloudflare.",
-  repo: "jc842/pbn-template",
+  name: "Hébergement Guadeloupe — Villas avec Piscine, Gîtes & Locations de Vacances",
+  domain: "hebergement-guadeloupe-location.com",
+  url: "https://hebergement-guadeloupe-location.com",
+  description: "Le guide indépendant de référence de la location saisonnière en Guadeloupe : villas de prestige vue mer, bungalows créoles, gîtes de charme et conseils de réservation directe.",
+  repo: "jc842/hebergement-guadeloupe-location",
 
   i18n: {
     defaultLocale: "fr",
@@ -25,14 +25,14 @@ export const siteConfig: SiteConfig = {
   },
 
   theme: {
-    style: "editorial",
-    fontFamily: "sans",
-    colorScheme: "emerald",
+    style: "lexington-mulberry",
+    fontFamily: "Playfair Display, serif",
+    colorScheme: "warm-taupe",
   },
 
   matomo: {
     url: "https://analytics.les4h.fr/",
-    siteId: "1",
+    siteId: "60",
   },
 
   revive: {
@@ -47,9 +47,9 @@ export const siteConfig: SiteConfig = {
 
   legal: {
     editor: "Éditeur indépendant",
-    address: "Union Européenne",
-    contactEmail: "contact@example.com",
-    hostName: "Cloudflare Pages",
+    address: "Guadeloupe / France",
+    contactEmail: "contact@hebergement-guadeloupe-location.com",
+    hostName: "Cloudflare Pages & Hetzner",
     hostAddress: "Union Européenne",
   },
 };

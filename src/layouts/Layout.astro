@@ -67,10 +67,10 @@ const theme = colorThemes[siteConfig.theme?.colorScheme || 'stone'] || colorThem
   <link rel="canonical" href={canonicalURL} />
 
   <!-- Hreflang Tags for i18n SEO -->
-  <link rel="alternate" hreflang="fr" href={siteConfig.url} />
-  <link rel="alternate" hreflang="en" href={`${siteConfig.url}/en`} />
-  <link rel="alternate" hreflang="es" href={`${siteConfig.url}/es`} />
-  <link rel="alternate" hreflang="x-default" href={siteConfig.url} />
+  <link rel="alternate" hreflang="fr" href={`${siteConfig.url}/`} />
+  <link rel="alternate" hreflang="en" href={`${siteConfig.url}/en/`} />
+  <link rel="alternate" hreflang="es" href={`${siteConfig.url}/es/`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteConfig.url}/`} />
 
   <!-- Open Graph -->
   <meta property="og:type" content={article ? 'article' : 'website'} />
@@ -90,29 +90,29 @@ const theme = colorThemes[siteConfig.theme?.colorScheme || 'stone'] || colorThem
 
 <body class={`min-h-screen flex flex-col ${theme.body} pb-24 md:pb-0`}>
   <!-- En-tête / Header -->
-  <header class={`sticky top-0 z-40 backdrop-blur-md border-b shadow-sm ${theme.header}`}>
+  <header class={`sticky top-0 z-40 backdrop-blur-md border-b shadow-xs ${theme.header}`}>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href={lang === 'fr' ? '/' : `/${lang}`} class="flex items-center space-x-2 group">
-          <span class="text-xl sm:text-2xl font-black tracking-tight group-hover:opacity-80 transition-opacity">
-            {siteConfig.name}
+        <a href={lang === 'fr' ? '/' : `/${lang}/`} class="flex items-center space-x-2 group">
+          <span class="text-xl sm:text-2xl font-serif font-black tracking-tight group-hover:opacity-80 transition-opacity">
+            {siteConfig.name.split('—')[0].trim()}
           </span>
         </a>
 
         <!-- Navigation Desktop -->
         <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
           <a href="/" class="hover:opacity-80 transition-opacity">{lang === 'es' ? 'Inicio' : (lang === 'en' ? 'Home' : 'Accueil')}</a>
-          <a href="/blog" class="hover:opacity-80 transition-opacity">{lang === 'es' ? 'Blog' : (lang === 'en' ? 'Blog' : 'Le Blog')}</a>
-          <a href="/mentions-legales" class="hover:opacity-80 transition-opacity">{lang === 'es' ? 'Aviso legal' : (lang === 'en' ? 'Legal' : 'Mentions Légales')}</a>
+          <a href="/blog/" class="hover:opacity-80 transition-opacity">{lang === 'es' ? 'Blog' : (lang === 'en' ? 'Blog' : 'Le Blog')}</a>
+          <a href="/mentions-legales/" class="hover:opacity-80 transition-opacity">{lang === 'es' ? 'Aviso legal' : (lang === 'en' ? 'Legal' : 'Mentions Légales')}</a>
         </nav>
 
         <!-- Sélecteur de Langues -->
-        <div class="hidden sm:flex items-center space-x-1.5 text-xs font-semibold bg-white/60 border rounded-full px-2.5 py-1">
-          <a href="/" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'fr' ? 'bg-black text-white' : 'text-stone-600 hover:text-black'}`}>FR</a>
-          <span class="text-stone-300">|</span>
-          <a href="/en" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'en' ? 'bg-black text-white' : 'text-stone-600 hover:text-black'}`}>EN</a>
-          <span class="text-stone-300">|</span>
-          <a href="/es" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'es' ? 'bg-black text-white' : 'text-stone-600 hover:text-black'}`}>ES</a>
+        <div class="hidden sm:flex items-center space-x-1.5 text-xs font-semibold bg-white border border-[#e7e1d8] rounded-full px-2.5 py-1">
+          <a href="/" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'fr' ? 'bg-[#2b2723] text-white' : 'text-[#736a61] hover:text-[#2b2723]'}`}>FR</a>
+          <span class="text-[#e7e1d8]">|</span>
+          <a href="/en/" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'en' ? 'bg-[#2b2723] text-white' : 'text-[#736a61] hover:text-[#2b2723]'}`}>EN</a>
+          <span class="text-[#e7e1d8]">|</span>
+          <a href="/es/" class={`px-1.5 py-0.5 rounded-full transition-colors ${lang === 'es' ? 'bg-[#2b2723] text-white' : 'text-[#736a61] hover:text-[#2b2723]'}`}>ES</a>
         </div>
       </div>
     </div>
@@ -139,10 +139,10 @@ const theme = colorThemes[siteConfig.theme?.colorScheme || 'stone'] || colorThem
   <footer class={`mt-16 border-t ${theme.footer}`}>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.</p>
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name.split('—')[0].trim()}. Tous droits réservés.</p>
         <div class="flex space-x-4">
-          <a href="/mentions-legales" class="hover:underline">Mentions Légales</a>
-          <a href="/politique-confidentialite" class="hover:underline">Confidentialité</a>
+          <a href="/mentions-legales/" class="hover:underline">Mentions Légales</a>
+          <a href="/politique-confidentialite/" class="hover:underline">Confidentialité</a>
         </div>
       </div>
     </div>

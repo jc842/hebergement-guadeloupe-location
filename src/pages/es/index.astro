@@ -18,13 +18,13 @@ esPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
       {esPosts.map(post => (
         <article class="bg-white rounded-xl border p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
           {post.data.heroImage && (
-            <a href={`/es/${post.id}`} class="aspect-[4/5] overflow-hidden rounded-lg mb-4 bg-stone-100">
+            <a href={`/es/${post.id}/`} class="aspect-[4/5] overflow-hidden rounded-lg mb-4 bg-stone-100">
               <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" loading="lazy" />
             </a>
           )}
           <span class="text-xs font-semibold uppercase text-stone-500 mb-2">{post.data.category}</span>
           <h3 class="text-base font-bold text-stone-900 hover:text-blue-600 transition-colors line-clamp-2 mb-2">
-            <a href={`/es/${post.id}`}>{post.data.title}</a>
+            <a href={`/es/${post.id}/`}>{post.data.title}</a>
           </h3>
           <p class="text-xs text-stone-600 line-clamp-3 mb-4 flex-grow">{post.data.description}</p>
           <div class="text-[11px] text-stone-400 pt-3 border-t">
