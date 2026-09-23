@@ -17,9 +17,15 @@ export default defineConfig({
       prefixDefaultLocale: siteConfig.i18n.prefixDefaultLocale || false,
     },
   },
+  vite: {
+    optimizeDeps: {
+      exclude: ['@keystatic/astro', '@keystatic/core', 'astro:env/server'],
+    },
+  },
   integrations: [
     tailwind(),
     react(),
     ...(isDev || process.env.ENABLE_KEYSTATIC ? [keystatic()] : []),
   ],
 });
+
